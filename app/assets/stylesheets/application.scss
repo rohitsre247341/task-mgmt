@@ -1,0 +1,24 @@
+
+ @import "bootstrap" ;
+ .custom-btn {
+    background: linear-gradient(135deg, rgba(114,182,229,1) 0%, rgba(143,116,195,1) 98%);
+    color: white;
+    border-color:radial-gradient(circle, rgba(223,157,186,1) 0%, rgba(178,148,184,1) 100%);
+    ;
+  }
+  .rk:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+.rk {
+    outline: none;
+}
+.center-div {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  }
