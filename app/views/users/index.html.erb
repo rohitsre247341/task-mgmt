@@ -1,45 +1,45 @@
 <%= form_with model: @user  do |form| %>
     <div style="background: linear-gradient(135deg, rgba(114,182,229,1) 0%, rgba(143,116,195,1) 98%); height: 100vh;">
-        <div style = "height: 60vh; width: 80vh; " class="col-md-6 offset-md-3 center-div ">
+        <div style = "height: 70vh; width: 95vh; " class="col-md-6 offset-md-3 center-div ">
             <div class = "container h-100 " style = "background: white; " >
-                <div class = "row align-items-center h-100" >
+                <div class = "row align-items-center h-100 p-3" >
                     <div class= "col" >
                         <h3 class="text-secondary">Registration</h3>
                         <div class = "row">
                             <div class = "col">
-                                <%= form.label :name, "Name", class: ' small' %>
-                                <%= form.text_field :name , placeholder: 'Enter your name', class: ' rk form-control form-control-sm '%>
+                                <%= form.label :name, "Name", class: 'medium' %>
+                                <%= form.text_field :name , placeholder: 'Enter your name', class: ' rk form-control  mt-1 mb-2 p-2'%>
                             </div>
                             <div class = 'col'>
-                                <%= form.label :username, "Username" , class: 'small' %>
-                                <%= form.text_field :username, placeholder: 'Enter your username', class: ' rk form-control form-control-sm' %>
+                                <%= form.label :username, "Username" , class: 'medium' %>
+                                <%= form.text_field :username, placeholder: 'Enter your username', class: ' rk form-control  mt-1 p-2 mb-2 mr-5' %>
                             </div>
                         </div>
                         <div class= "row">
                             <div class= "col" style = "outline: none;">
-                                <%= form.label :email, "Email", class: ' small' %>
-                                <%= form.email_field :email, placeholder: 'Enter your email' ,class: 'rk form-control form-control-sm' %>
+                                <%= form.label :email, "Email", class: 'medium' %>
+                                <%= form.email_field :email, placeholder: 'Enter your email' ,class: 'rk form-control  mt-1 mb-2 p-2' %>
                             </div>
                             <div class = "col">
-                                <%= form.label :phone_number, "Phone Number", class: 'small' %>
-                                <%= form.text_field :phone_number , placeholder: 'Enter your number',class: ' rk form-control form-control-sm' %>
+                                <%= form.label :phone_number, "Phone Number", class: 'medium' %>
+                                <%= form.text_field :phone_number , placeholder: 'Enter your number',class: ' rk form-control mt-1 p-2 mb-2' %>
                             </div>
                         </div>
                         <div class= "row">
                             <div class= "col">
-                                <%= form.label :password, "Password", class: ' small' %>
-                                <%= form.password_field :password, placeholder: 'Enter your password', class: ' rk form-control form-control-sm' %>
+                                <%= form.label :password, "Password", class: 'medium' %>
+                                <%= form.password_field :password, placeholder: 'Enter your password', class: ' rk form-control mt-1 p-2' %>
                             </div>
                             <div class = "col">
-                                <%= form.label :confirm_password, "Confirm Password", class: 'small' %>
-                                <%= form.text_field :confirm_password, placeholder: 'Confirm your password', class: 'rk form-control form-control-sm' %>
+                                <%= form.label :confirm_password, "Confirm Password", class: 'medium' %>
+                                <%= form.text_field :confirm_password, placeholder: 'Confirm your password', class: 'rk form-control  mt-1 p-2' %>
                                 <br>
                             </div>
                         </div>
                         
                         <div class='row'>
                             <div class= 'col'>
-                                <%= form.label :gender, 'Gender', class: 'small' %>
+                                <%= form.label :gender, 'Gender', class: 'medium' %>
                             </div>
                         </div>  <br>
                         <div class = 'row'  > 
