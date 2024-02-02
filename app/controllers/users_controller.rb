@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :user_present ,only: [:sign_in , :log_in, :registration, :create,:sucess]
   def log_in
     @author = User.new
   end
@@ -16,12 +17,13 @@ class UsersController < ApplicationController
   end
   def sucess 
   end
-  def destroy
+  def log_out
     session[:user_id] = nil
     redirect_to root_path
   end
   def show
-    @user = User.find(params[:id])
+      @user = User.find(params[:id])
+      @book = @user.tasks
   end
   def index 
     @user = User.new
