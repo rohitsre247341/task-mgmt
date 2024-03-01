@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_action :user_present ,only: [:sign_in , :log_in, :registration, :create,:sucess]
+  skip_before_action :user_present ,only: [:sign_in , :log_in, :registration, :create,:sucess, :show]
+  before_action :user_active ,only: [:show]
   def log_in
     @author = User.new
   end
@@ -9,8 +10,8 @@ class UsersController < ApplicationController
   def sign_in
     @user = User.find_by(email: user_params['email'])
     if @user && @user.authenticate(user_params[:password])
-      log_inn(@user)
-      redirect_to(@user)
+        session[:user_id] = @user.id
+        redirect_to(@user)
     else
       redirect_to root_path
     end
@@ -22,7 +23,11 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
   def show
+    if current_user.present?
+      @user = User.find(session[:user_id])
+    else
       @user = User.find(params[:id])
+    end
       @book = @user.tasks
   end
   def index 
@@ -40,7 +45,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password)
     end
-    def log_inn(user)
-      session[:user_id] = user.id
+    def user_active
+      if current_user.present?
+        @user = User.find(session[:user_id])
+      end
     end
 end
